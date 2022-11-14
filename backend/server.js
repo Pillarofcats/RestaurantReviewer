@@ -19,7 +19,7 @@ console.log('port', process.env.PORT)
 if(process.env.NODE_ENV === 'production') {
   //React build file, must be done first before serving build index.html from public
   //Build folder with front end static assets
-  app.use(express.static(path.join(__dirname, "..", "build")));
+  app.use(express.static(path.join(__dirname, "/build")));
   //Serve react build file from public along with css and js
   app.use(express.static("public"));
 
@@ -28,7 +28,7 @@ if(process.env.NODE_ENV === 'production') {
   app.get('*', (req,res) => {
     res.sendFile((
       //__dirname -> '../' -> frontend -> build -> html
-      res.sendFile(path.join(__dirname, "..", "build", "index.html"))
+      res.sendFile(path.join(__dirname, "build", "index.html"))
     ))
   })
 } else {
