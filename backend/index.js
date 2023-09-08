@@ -30,6 +30,7 @@ mongoClient.connect(
 })
 //Client connected to DB successfully
 .then(async client => {
+  console.log('CLIENT', client)
   //Initial reference to "restaurants" collection in database
   //Apply custom class RestaurantsDAO to filter DB queries
   await RestaurantsDAO.injectDB(client)

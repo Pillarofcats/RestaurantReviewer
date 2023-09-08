@@ -7,6 +7,7 @@ class RestaurantsDAO {
   //Try to connect to DB
   static async injectDB(conn) {
     //Restuarants is connected already
+    console.log('conn', conn)
     if(restaurants) {
       return
     }
